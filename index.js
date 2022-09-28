@@ -20,11 +20,14 @@ async function run() {
     try {
      
       await client.connect();
+      //first 5 collection are made for just practice 
       const servicesCollection =client.db('shoptopshopping').collection('services');
       const productsCollection =client.db('shoptopshopping').collection('products');
       const usersCollection =client.db('shoptopshopping').collection('users');
       const bookingCollection =client.db('shoptopshopping').collection('booking');
       const ordersCollection =client.db('shoptopshopping').collection('orders');
+      // all the collection of cluster set at above are for testing and 
+      // the collection of cluster below is made for real data 
       const slideCollection =client.db('shoptopshopping').collection('slideData');
       const topsellerCollection =client.db('shoptopshopping').collection('topSeller');
       const flashDealsCollection =client.db('shoptopshopping').collection('flashDeals');
