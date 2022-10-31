@@ -34,9 +34,11 @@ async function run() {
       const menDataCollection =client.db('shoptopshopping').collection('menData');
       const womenDataCollection =client.db('shoptopshopping').collection('womenData');
       const kidsDataCollection =client.db('shoptopshopping').collection('kidsData');
+      const addressCollection =client.db('shoptopshopping').collection('address');
      
      
      
+    
       // admin post product
       app.post('/productPost',async(req,res)=>{
         const newProduct  =req.body;
@@ -338,6 +340,10 @@ app.delete('/order/:id',async(req,res)=>{
   const result =await ordersCollection.deleteOne(query);
   res.send(result);
 })
+
+
+
+
 
 
 
