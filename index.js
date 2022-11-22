@@ -112,7 +112,21 @@ async function run() {
     })
      
      // here end the men data 
+    app.put('/update/:id',async(req,res)=>{
+      const id = req.params.id;
+      const query ={_id:ObjectID(id)}
+      const options = { upsert: true };
+      const updateDoc = {
+        $set: {
+          random_review: `After viewing I am ${
+            100 * Math.random()
+          }% more satisfied with life.`,
+        },
+      };
+      const result = await productsCollection.updateOne(query, updateDoc,options);
+      res.send(result)
 
+    })
 
      //women data started
     //women all men data 
